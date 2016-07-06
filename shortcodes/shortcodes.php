@@ -1,4 +1,6 @@
 <?php
+// functions to support shortcodes (ie. [myshortcode]) to incorporate
+// the output of custom php functions in blog messages.
 
 function lacocinawordpressplugin_display_commentscount() {
     // return the number of comments on the current page

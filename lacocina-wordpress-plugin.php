@@ -12,5 +12,8 @@ Domain Path: /languages
 Text Domain: lacocina-wordpress-plugin
 */
 
+// see README in current path
+
+// add shortcode functions
 require_once( dirname(__file__).'/shortcodes/shortcodes.php' );
 ?>

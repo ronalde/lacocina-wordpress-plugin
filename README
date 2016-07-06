@@ -1,0 +1,13 @@
+Lacocina wordpress plugin
+=========================
+
+Currently two functions exists to support shortcodes:
+
+* [githubissuescount]: number of (open) issues in github repository
+* [commentscount]: number of comments in current blog message
+
+Installation takes place by copying this directory to:
+/usr/share/wordpress/wp-content/plugins/lacocina-wordpress-plugin
+
+Development takes place in a git repository published on github.
+

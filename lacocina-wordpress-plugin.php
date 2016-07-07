@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Lacocina wordpress plugin
-Plugin URI:  https://lacocina.nl/wordpress-plugins
+Plugin URI:  https://github.com/ronalde/lacocina-wordpress-plugin
 Description: Collections of custom functions for lacocina's wordpress site
-Version:     0.1
+Version:     0.2
 Author:      Ronald van Engelen
 Author URI:  https://github.com/ronalde
 License:     GPL2

@@ -1,14 +1,22 @@
 <?php
 // functions to support shortcodes (ie. [myshortcode]) to incorporate
-// the output of custom php functions in blog messages.
+// the output of custom php functions in wordpress blog messages and
+// pages.
 
-function lacocinawordpressplugin_display_commentscount() {
+function lacocinawordpressplugin_display_commentscount($atts) {
     // return the number of comments on the current page
 
-    $msg_no_comments_found = '(none)';
-    $msg_no_comments_available = '(unavailable)';
-    $num_comments = get_comments_number(); // get_comments_number returns only a numeric value
-
+    // provide optional attributes:
+    // [commentscount nocomments="nothing found" unavailable="not enabled"]
+    $atts = shortcode_atts( array(
+		'nocomments' => '(none)',
+		'unavailable' => '(unavailable)'
+	), $atts, 'lc_commentscount' );
+    
+    $msg_no_comments_found = {$atts['nocomments']};
+    $msg_no_comments_available = {$atts['unavailable']};
+    // get_comments_number returns only a numeric value
+    $num_comments = get_comments_number(); 
     if ( comments_open() ) {
         if ( $num_comments == 0 ) {
             $comments = __($msg_no_comments_found);
@@ -19,13 +27,11 @@ function lacocinawordpressplugin_display_commentscount() {
     } else {
         $write_comments =  __($msg_no_comments_available);
     }
-
     return $write_comments;
-
 }
 
 
-function lacocinawordpressplugin_display_githubissuescount() {
+function lacocinawordpressplugin_display_githubissuescount($atts) {
     // return the number of open issues on a github project using it's API
 
     $gh_api_url ='https://api.github.com';

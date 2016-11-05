@@ -1,13 +1,27 @@
-Lacocina wordpress plugin
-=========================
+# Lacocina wordpress plugin
+
+## Features
 
 Currently two functions exists to support shortcodes:
 
-* [githubissuescount]: number of (open) issues in github repository
-* [commentscount]: number of comments in current blog message
+`[githubissuescount]`
+: number of (open) issues in github repository
+
+  Required arguments:
+  - `user`: your github user name
+  - `project`: name of your github project
+  - `issuelabel`: label of issue (ie 'bug)
+
+`[commentscount]`
+: number of comments in current blog message
+
+## Installation
 
 Installation takes place by copying this directory to:
-/usr/share/wordpress/wp-content/plugins/lacocina-wordpress-plugin
 
-Development takes place in a git repository published on github.
+* `/usr/share/wordpress/wp-content/plugins/lacocina-wordpress-plugin`
+
+Development takes place in a git repository published on github:
+
+* https://github.com/ronalde/lacocina-wordpress-plugin/
 

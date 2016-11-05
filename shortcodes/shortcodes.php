@@ -39,13 +39,13 @@ function lacocinawordpressplugin_display_githubissuescount($atts) {
     $atts = shortcode_atts( array(
 		'user' => 'ronalde',
 		'project' => 'lacocina-wordpress-plugin',
-		'issuetype' => 'bug'        
-	), $atts, 'lc_commentscount' );
+		'issuelabel' => 'bug'        
+	), $atts, 'githubissuecount' );
     
     $gh_api_url ='https://api.github.com';
     $gh_user = "{$atts['user']}";
     $gh_repo = "{$atts['project']}";
-    $gh_issuetype = "{$atts['issuetype']}";
+    $gh_issuelabel = "{$atts['issuelabel']}";
     $gh_url = $gh_api_url . '/repos/' . $gh_user . '/' . $gh_repo;
     //$gh_url = $gh_api_url . '/repos/' . $gh_user . '/' . $gh_repo . '/labels/' . $gh_issuetype ;
     //$gh_url = $gh_api_url . '/users/ronalde';

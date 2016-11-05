@@ -13,8 +13,8 @@ function lacocinawordpressplugin_display_commentscount($atts) {
 		'unavailable' => '(unavailable)'
 	), $atts, 'lc_commentscount' );
     
-    $msg_no_comments_found = {$atts['nocomments']};
-    $msg_no_comments_available = {$atts['unavailable']};
+    $msg_no_comments_found = "{$atts['nocomments']}";
+    $msg_no_comments_available = "{$atts['unavailable']}";
     // get_comments_number returns only a numeric value
     $num_comments = get_comments_number(); 
     if ( comments_open() ) {
@@ -34,10 +34,18 @@ function lacocinawordpressplugin_display_commentscount($atts) {
 function lacocinawordpressplugin_display_githubissuescount($atts) {
     // return the number of open issues on a github project using it's API
 
+    // provide optional attributes:
+    // [commentscount nocomments="nothing found" unavailable="not enabled"]
+    $atts = shortcode_atts( array(
+		'user' => 'ronalde',
+		'project' => 'lacocina-wordpress-plugin',
+		'issuetype' => 'bug'        
+	), $atts, 'lc_commentscount' );
+    
     $gh_api_url ='https://api.github.com';
-    $gh_user = 'ronalde';
-    $gh_repo = 'mpd-configure';
-    $gh_issuetype = 'bug';
+    $gh_user = "{$atts['user']}";
+    $gh_repo = "{$atts['project']}";
+    $gh_issuetype = "{$atts['issuetype']}";
     $gh_url = $gh_api_url . '/repos/' . $gh_user . '/' . $gh_repo;
     //$gh_url = $gh_api_url . '/repos/' . $gh_user . '/' . $gh_repo . '/labels/' . $gh_issuetype ;
     //$gh_url = $gh_api_url . '/users/ronalde';
@@ -45,7 +53,6 @@ function lacocinawordpressplugin_display_githubissuescount($atts) {
     $gh_jsonbody = wp_remote_retrieve_body( $gh_response );
     $gh_jsonobj = json_decode( $gh_jsonbody, true );
      //return var_dump( $gh_jsonobj );
-
     return $gh_jsonobj['open_issues_count'];
 }
 

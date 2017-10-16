@@ -10,10 +10,14 @@ $asciinemaplayer_cssfile = "asciinema-player.css";
 $asciinemaplayer_jsfile = "asciinema-player.js";
 $asciinemaplayer_dir = plugins_url() . '/' . $asciinemaplayer_reldir;
 
-wp_register_style( 'asciinema',
-                   $asciinemaplayer_dir . '/' , $asciinemaplayer_cssfile);
-wp_register_script( 'asciinema',
-                    $asciinemaplayer_dir . '/' , $asciinemaplayer_jsfile);
+wp_register_style(
+    'asciinema',
+    $asciinemaplayer_dir . '/' , $asciinemaplayer_cssfile
+);
+wp_register_script(
+    'asciinema',
+    $asciinemaplayer_dir . '/' , $asciinemaplayer_jsfile
+);
 wp_enqueue_style('asciinema');
 wp_enqueue_script( 'asciinema');
 

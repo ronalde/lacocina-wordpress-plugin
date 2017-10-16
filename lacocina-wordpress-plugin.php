@@ -3,7 +3,7 @@
 Plugin Name: Lacocina wordpress plugin
 Plugin URI:  https://github.com/ronalde/lacocina-wordpress-plugin
 Description: Collections of custom functions for lacocina's wordpress site
-Version:     0.4
+Version:     0.5
 Author:      Ronald van Engelen
 Author URI:  https://github.com/ronalde
 License:     GPL2

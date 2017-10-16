@@ -12,11 +12,11 @@ $asciinemaplayer_dir = plugins_url($plugin) . '/' . $asciinemaplayer_reldir;
 
 wp_register_style(
     'asciinema',
-    $asciinemaplayer_dir . '/' , $asciinemaplayer_cssfile
+    $asciinemaplayer_dir . '/' . $asciinemaplayer_cssfile
 );
 wp_register_script(
     'asciinema',
-    $asciinemaplayer_dir . '/' , $asciinemaplayer_jsfile
+    $asciinemaplayer_dir . '/' . $asciinemaplayer_jsfile
 );
 wp_enqueue_style('asciinema');
 wp_enqueue_script( 'asciinema');

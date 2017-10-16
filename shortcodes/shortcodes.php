@@ -8,7 +8,7 @@
 $asciinemaplayer_reldir = "upstream";
 $asciinemaplayer_cssfile = "asciinema-player.css";
 $asciinemaplayer_jsfile = "asciinema-player.js";
-$asciinemaplayer_dir = plugins_url() . '/' . $asciinemaplayer_reldir;
+$asciinemaplayer_dir = plugins_url($path, $plugin) . '/' . $asciinemaplayer_reldir;
 
 wp_register_style(
     'asciinema',
